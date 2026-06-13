@@ -100,6 +100,26 @@ export const INITIAL_KAJIAN: Kajian[] = [
     day: 'Pekan Ke-5',
     image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&q=80&w=300',
     youtubeUrl: 'https://www.youtube.com/watch?v=DBuNS3Ua2Nc&list=PLLrzrdSGtEBa2VzuEXpEQikURll5uYCF9'
+  },
+  {
+    id: 'kajian-6',
+    ustadz: 'Ustadzah Muthiah Yusuf Lc., S.Pd.I., MA',
+    theme: 'Kajian Hilyah Attilawah',
+    time: 'Ba’da Subuh s/d Selesai',
+    location: 'Masjid MAAR 3',
+    day: 'Setiap Sabtu / Ahad Pekan Tertentu',
+    image: 'https://images.unsplash.com/photo-1609599006353-e629f1d40e39?auto=format&fit=crop&q=80&w=600',
+    youtubeUrl: 'https://www.youtube.com/watch?v=k4U-Y8S2Tds&list=PLLrzrdSGtEBYn29mO7GvclI165P6_K985'
+  },
+  {
+    id: 'kajian-7',
+    ustadz: 'Ustadzah Muthiah Yusuf Lc., S.Pd.I., MA',
+    theme: 'Kajian Fiqih Ibu Kitab \'Umdatul Mar\'ah',
+    time: 'Ba’da Ashar s/d Selesai',
+    location: 'Masjid MAAR 3',
+    day: 'Setiap Sabtu Sore',
+    image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=600',
+    youtubeUrl: 'https://www.youtube.com/watch?v=k4U-Y8S2Tds&list=PLLrzrdSGtEBYn29mO7GvclI165P6_K985'
   }
 ];
 
@@ -114,7 +134,7 @@ export const INITIAL_KEGIATAN: Kegiatan[] = [
     location: 'Masjid MAAR 3, OGP',
     image: IMAGES.kajianIslam,
     status: 'Sedang Berjalan',
-    youtubeUrl: 'https://www.youtube.com/watch?v=k4U-Y8S2Tds'
+    youtubeUrl: 'https://www.youtube.com/watch?v=wJWkViLZH54&list=PLLrzrdSGtEBZ3j8AVDL89668jie2FYb9g&index=1'
   },
   {
     id: 'keg-2',
@@ -126,7 +146,7 @@ export const INITIAL_KEGIATAN: Kegiatan[] = [
     location: 'Halaman Masjid MAAR 3',
     image: IMAGES.sedekahJumat,
     status: 'Sedang Berjalan',
-    youtubeUrl: 'https://www.youtube.com/watch?v=WstG4827sH8'
+    youtubeUrl: 'https://www.youtube.com/watch?v=dLVyne2GSIY&list=PLLrzrdSGtEBZ-pVIcjf5v-Do7cRZGpHz8&index=3'
   },
   {
     id: 'keg-3',
@@ -138,7 +158,7 @@ export const INITIAL_KEGIATAN: Kegiatan[] = [
     location: 'Samping Balai Warga OGP',
     image: IMAGES.greenOrchid,
     status: 'Mendatang',
-    youtubeUrl: 'https://www.youtube.com/watch?v=Rp3G_b12Sf9'
+    youtubeUrl: 'https://www.youtube.com/watch?v=SGDEwQmLGOI&list=PLLrzrdSGtEBZ59Zf5dGQ97rRNXVzB70j5'
   },
   {
     id: 'keg-4',
@@ -150,7 +170,7 @@ export const INITIAL_KEGIATAN: Kegiatan[] = [
     location: 'Saung Serbaguna OGP',
     image: IMAGES.posyandu,
     status: 'Mendatang',
-    youtubeUrl: 'https://www.youtube.com/watch?v=Fv4sA8G_T9H'
+    youtubeUrl: 'https://www.youtube.com/watch?v=5alDG_L8ePc&list=PLLrzrdSGtEBa51WI3Yf_zjTC8LPJyZQQM'
   },
   {
     id: 'keg-5',
@@ -174,7 +194,7 @@ export const INITIAL_KEGIATAN: Kegiatan[] = [
     location: 'Masjid MAAR3 Perum. Orchid Green Park',
     image: IMAGES.kbmaFlyer,
     status: 'Sedang Berjalan',
-    youtubeUrl: 'https://www.youtube.com/watch?v=KdE8a_G8df2'
+    youtubeUrl: 'https://www.youtube.com/watch?v=eU_obh7NUdI&list=PLLrzrdSGtEBZC7XLgvTlzf3lv4CcR6lca'
   },
   {
     id: 'keg-7',
@@ -186,7 +206,7 @@ export const INITIAL_KEGIATAN: Kegiatan[] = [
     location: 'Masjid MAAR 3 & Kawasan OGP',
     image: IMAGES.eidUmat,
     status: 'Selesai',
-    youtubeUrl: 'https://www.youtube.com/watch?v=Ad9G_p1Wd8s'
+    youtubeUrl: 'https://www.youtube.com/watch?v=sMBP5oKVJhQ&list=PLLrzrdSGtEBaV2ESuLHj_BMbfShbXJvj-'
   },
   {
     id: 'keg-8',
@@ -198,7 +218,7 @@ export const INITIAL_KEGIATAN: Kegiatan[] = [
     location: 'Area Pemotongan Masjid MAAR 3',
     image: IMAGES.idulAdha,
     status: 'Mendatang',
-    youtubeUrl: 'https://www.youtube.com/watch?v=QdG7s_A9fS9'
+    youtubeUrl: 'https://www.youtube.com/watch?v=AmkEJ_pMySk&list=PLLrzrdSGtEBbXivJwR0o6cPYeU6v9pjpM'
   },
   {
     id: 'keg-9',

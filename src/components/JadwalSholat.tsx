@@ -528,52 +528,63 @@ export default function JadwalSholat() {
               times.map((sholat) => {
                 const isNext = nextSholat?.name === sholat.name;
                 
+                // Color configuration matching the homepage categories:
+                // Subuh -> Sky blue (Fresh pre-dawn / Sembako style)
+                // Dzuhur -> Amber (Kuliner/Makanan)
+                // Ashar -> Emerald (Beranda / Jasa & Servis)
+                // Maghrib -> Rose (Fashion / Pakaian)
+                // Isya -> Indigo (Night twilight)
+                const getSholatTheme = () => {
+                  return {
+                    cardClass: isNext
+                      ? 'bg-emerald-900 dark:bg-emerald-950 border-amber-400 text-white shadow-lg shadow-emerald-950/40 ring-2 ring-amber-400/60 scale-[1.01]'
+                      : 'bg-emerald-900 dark:bg-emerald-950 text-white border-emerald-505/30 shadow-sm',
+                    iconClass: 'bg-white/10 text-emerald-100 border border-white/5',
+                    badgeStyle: 'bg-amber-400 text-emerald-950 font-extrabold',
+                    timeClass: 'text-white',
+                    textClass: 'text-white',
+                    subTextClass: 'text-emerald-150/85',
+                  };
+                };
+
+                const theme = getSholatTheme();
+                
                 return (
                   <motion.div
                     id={`sholat-row-${sholat.name}`}
                     key={sholat.name}
                     whileHover={{ scale: 1.01 }}
-                    className={`flex justify-between items-center p-5 rounded-2xl transition-all duration-300 shadow-sm border ${
-                      isNext
-                        ? 'bg-gradient-to-r from-emerald-50 to-emerald-100/40 dark:from-slate-800 dark:to-emerald-950/20 border-emerald-500/40 ring-1 ring-emerald-500/20 scale-101'
-                        : 'bg-white dark:bg-slate-800 border-gray-100 dark:border-slate-800'
-                    }`}
+                    className={`flex justify-between items-center p-5 rounded-2xl transition-all duration-300 shadow-sm border ${theme.cardClass}`}
                   >
                     <div className="flex items-center space-x-4">
                       {/* Unique Mosque Calligraphic Icon background */}
-                      <div
-                        className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                          isNext
-                            ? 'bg-amber-400 text-emerald-950 shadow-md shadow-amber-400/20'
-                            : 'bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300'
-                        }`}
-                      >
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${theme.iconClass}`}>
                         <span className="font-serif font-black text-sm uppercase">
                           {sholat.name.substring(0, 2)}
                         </span>
                       </div>
                       <div>
                         <div className="flex items-center space-x-2">
-                          <h4 className="text-lg font-serif font-bold text-gray-900 dark:text-white">
+                          <h4 className={`text-lg font-serif font-bold ${theme.textClass}`}>
                             {sholat.name}
                           </h4>
                           {isNext && (
-                            <span className="text-[10px] bg-emerald-600 text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider animate-pulse">
+                            <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider animate-pulse ${theme.badgeStyle}`}>
                               Selanjutnya
                             </span>
                           )}
                         </div>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 font-sans">
+                        <p className={`text-xs font-sans ${theme.subTextClass}`}>
                           Waktu adzan wilayah Sawangan Depok
                         </p>
                       </div>
                     </div>
                     
                     <div className="text-right">
-                      <span className="text-2xl md:text-3xl font-mono font-bold text-emerald-800 dark:text-amber-400 drop-shadow-sm">
+                      <span className={`text-2xl md:text-3xl font-mono font-bold drop-shadow-sm ${theme.timeClass}`}>
                         {sholat.time}
                       </span>
-                      <p className="text-[10px] text-gray-400 dark:text-gray-500 font-sans tracking-wide">
+                      <p className={`text-[10px] font-sans tracking-wide ${theme.subTextClass}`}>
                         WIB - Iqomah +10 Menit
                       </p>
                     </div>

@@ -84,18 +84,23 @@ export default function Hero({ onTabChange }: HeroProps) {
           (MAAR 3)
         </motion.p>
 
-        {/* Location indicators */}
+        {/* Location indicators as smooth scrolling marquee */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.45 }}
-          className="flex flex-col items-center justify-center space-y-2 text-emerald-100 dark:text-emerald-200 text-xs sm:text-sm md:text-base font-medium max-w-2xl mx-auto mb-10 pb-6 border-b border-white/10"
+          className="flex items-center space-x-2 text-emerald-100 dark:text-emerald-200 text-xs sm:text-sm md:text-base font-medium max-w-xl mx-auto mb-10 pb-6 border-b border-white/10 overflow-hidden w-full px-4"
         >
-          <div className="flex items-center space-x-1.5 text-center">
-            <Compass className="w-4 h-4 text-amber-400 shrink-0" />
-            <span className="leading-relaxed">
-              Perumahan Muslim The Orchid Green Park, RT 8/RW 8, Kelurahan Pasir Putih, Kecamatan Sawangan, Kota Depok, Jawa Barat
-            </span>
+          <Compass className="w-4 h-4 text-amber-400 shrink-0 z-10" />
+          <div className="relative flex overflow-x-hidden w-full select-none">
+            <div className="animate-marquee flex">
+              <span className="inline-block shrink-0 px-4">
+                Perumahan Muslim The Orchid Green Park, RT 8/RW 8, Kelurahan Pasir Putih, Kecamatan Sawangan, Kota Depok, Jawa Barat &nbsp; &nbsp; <span className="text-amber-400">✦</span> &nbsp; &nbsp;
+              </span>
+              <span className="inline-block shrink-0 px-4">
+                Perumahan Muslim The Orchid Green Park, RT 8/RW 8, Kelurahan Pasir Putih, Kecamatan Sawangan, Kota Depok, Jawa Barat &nbsp; &nbsp; <span className="text-amber-400">✦</span> &nbsp; &nbsp;
+              </span>
+            </div>
           </div>
         </motion.div>
 

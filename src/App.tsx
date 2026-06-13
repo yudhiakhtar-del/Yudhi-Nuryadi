@@ -47,6 +47,8 @@ import {
 } from './data/initialData';
 
 import UmkmPanel from './components/UmkmPanel';
+import WargaPanel from './components/WargaPanel';
+import AssetMasjid from './components/AssetMasjid';
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState<string>('beranda');
@@ -81,7 +83,7 @@ export default function App() {
       return merged.map((item: Kegiatan) => {
         const defaultIconItem = INITIAL_KEGIATAN.find(d => d.id === item.id);
         const updated = { ...item };
-        if (defaultIconItem && !updated.youtubeUrl) {
+        if (defaultIconItem && (item.id === 'keg-1' || item.id === 'keg-2' || item.id === 'keg-3' || item.id === 'keg-4' || item.id === 'keg-6' || item.id === 'keg-7' || item.id === 'keg-8' || !updated.youtubeUrl)) {
           updated.youtubeUrl = defaultIconItem.youtubeUrl;
         }
         if (item.id === 'keg-2') {
@@ -130,11 +132,19 @@ export default function App() {
     const cached = localStorage.getItem('maar3_kajian');
     if (cached) {
       const parsed = JSON.parse(cached);
-      return parsed.map((item: Kajian) => {
+      const merged = [...parsed];
+      INITIAL_KAJIAN.forEach(defaultItem => {
+        if (!merged.some(item => item.id === defaultItem.id)) {
+          merged.push(defaultItem);
+        }
+      });
+      return merged.map((item: Kajian) => {
         const defaultKajianItem = INITIAL_KAJIAN.find(d => d.id === item.id);
         const updated = { ...item };
-        if (defaultKajianItem && (item.id === 'kajian-1' || item.id === 'kajian-2' || item.id === 'kajian-3' || item.id === 'kajian-4' || item.id === 'kajian-5' || !updated.youtubeUrl)) {
+        if (defaultKajianItem && (item.id === 'kajian-1' || item.id === 'kajian-2' || item.id === 'kajian-3' || item.id === 'kajian-4' || item.id === 'kajian-5' || item.id === 'kajian-6' || item.id === 'kajian-7' || !updated.youtubeUrl)) {
           updated.youtubeUrl = defaultKajianItem.youtubeUrl;
+          updated.ustadz = defaultKajianItem.ustadz;
+          updated.theme = defaultKajianItem.theme;
         }
         if (item.id === 'kajian-1') {
           return { ...updated, image: fiqihSunnahFlyer };
@@ -449,6 +459,12 @@ export default function App() {
             {/* UMKM local business board */}
             <UmkmPanel umkmList={umkmList} />
 
+            {/* Asset Masjid Panel */}
+            <AssetMasjid />
+
+            {/* Warga Panel (Interactive resident portal) */}
+            <WargaPanel />
+
             {/* Quick interactive schedules Widget on home */}
             <JadwalSholat />
           </>
@@ -470,11 +486,10 @@ export default function App() {
         return <GaleriComponent galeriList={galeriList} />;
 
       case 'umkm':
-        return (
-          <div className="pt-24 min-h-[85vh]">
-            <UmkmPanel umkmList={umkmList} />
-          </div>
-        );
+        return <UmkmPanel umkmList={umkmList} showFullHeader={true} />;
+
+      case 'warga':
+        return <WargaPanel showFullHeader={true} />;
 
       case 'artikel':
         return <ArtikelComponent artikelList={artikelList} onLike={handleLikeArtikel} />;

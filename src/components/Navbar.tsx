@@ -35,6 +35,7 @@ export default function Navbar({
     { id: 'kajian', label: 'Kajian' },
     { id: 'kegiatan', label: 'Kegiatan' },
     { id: 'umkm', label: 'UMKM' },
+    { id: 'warga', label: 'Portal Warga' },
     { id: 'artikel', label: 'Artikel' },
     { id: 'donasi', label: 'Donasi' },
   ];

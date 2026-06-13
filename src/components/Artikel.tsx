@@ -36,22 +36,57 @@ export default function ArtikelComponent({ artikelList, onLike }: ArtikelProps) 
   };
 
   return (
-    <section id="artikel-section" className="py-20 bg-white dark:bg-slate-950 transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Title Group */}
-        <div className="text-center mb-12">
-          <span className="text-emerald-700 dark:text-emerald-400 font-bold uppercase tracking-wider text-xs md:text-sm bg-emerald-100 dark:bg-emerald-950/40 px-4 py-1.5 rounded-full inline-flex items-center space-x-1.5 mb-3">
-            <BookOpen className="w-4 h-4 text-amber-500" />
+    <div className="bg-slate-50 dark:bg-slate-950 transition-colors">
+      {/* Immersive Beranda-style Header Banner Section */}
+      <div className="relative py-24 bg-emerald-950 overflow-hidden flex items-center justify-center text-center">
+        {/* Immersive Mosque Senja Background Wallpaper */}
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center scale-102 filter brightness-[0.38] contrast-[1.05]"
+          style={{ 
+            backgroundImage: `url('https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=1600')` 
+          }}
+        />
+
+        {/* Decorative Golden Ambient Lights & Fog Effect */}
+        <div className="absolute inset-0 bg-gradient-to-t from-emerald-950 via-emerald-950/45 to-transparent z-10" />
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-amber-500/10 blur-3xl z-10" />
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-emerald-500/10 blur-3xl z-10" />
+
+        {/* Repeating Premium Arabesque Glowing Rotating Geometric Overlays */}
+        <div className="absolute right-[-10%] top-[-10%] w-[450px] h-[450px] opacity-[0.05] pointer-events-none animate-[spin_120s_linear_infinite] z-10">
+          <svg viewBox="0 0 100 100" className="w-full h-full text-amber-400" fill="currentColor">
+            <path d="M50 0 L60 30 L90 20 L70 50 L100 60 L70 70 L90 90 L60 80 L50 100 L40 80 L10 90 L30 70 L0 60 L30 50 L10 20 L40 30 Z" />
+            <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" strokeWidth="1" />
+          </svg>
+        </div>
+
+        <div className="absolute left-[-10%] bottom-[-10%] w-[450px] h-[450px] opacity-[0.04] pointer-events-none animate-[spin_180s_linear_infinite] z-10">
+          <svg viewBox="0 0 100 100" className="w-full h-full text-amber-400" fill="currentColor">
+            <path d="M50 0 L60 30 L90 20 L70 50 L100 60 L70 70 L90 90 L60 80 L50 100 L40 80 L10 90 L30 70 L0 60 L30 50 L10 20 L40 30 Z" />
+          </svg>
+        </div>
+
+        {/* Header content */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 pt-8">
+          <div className="inline-flex items-center space-x-2 bg-amber-500/15 border border-amber-400/30 px-4 py-1.5 rounded-full text-xs md:text-sm text-amber-300 font-semibold tracking-wide uppercase mb-4 shadow-md backdrop-blur-sm">
+            <BookOpen className="w-4 h-4 text-amber-400 animate-pulse" />
             <span>Khasanah & Perpustakaan Digital</span>
-          </span>
-          <h2 className="text-3xl md:text-5xl font-serif font-black text-gray-950 dark:text-white tracking-tight">
-            Artikel & Untaian Dakwah
+          </div>
+
+          <h2 className="text-3xl md:text-6xl font-serif font-black tracking-wider text-white uppercase drop-shadow-md mb-3">
+            <span className="bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent">
+              Artikel & Untaian Dakwah
+            </span>
           </h2>
-          <p className="mt-2 text-sm md:text-base text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+
+          <p className="mt-2 text-sm md:text-base text-emerald-100/90 max-w-2xl mx-auto font-sans leading-relaxed">
             Perluas wawasan keislaman Anda seputar akidah, fikih ibadah harian, adab keluarga, dan dakwah aktual.
           </p>
         </div>
+      </div>
+
+      <section id="artikel-section" className="py-12 md:py-20 animate-fade-in max-w-7xl mx-auto">
+        <div className="px-4 sm:px-6 lg:px-8">
 
         {/* Filter bar search tools */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center mb-12 max-w-4xl mx-auto">
@@ -331,5 +366,6 @@ export default function ArtikelComponent({ artikelList, onLike }: ArtikelProps) 
 
       </div>
     </section>
+    </div>
   );
 }
